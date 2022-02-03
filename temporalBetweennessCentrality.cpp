@@ -89,10 +89,13 @@ int main()
     brandes_betweenness_centrality(g, centrality_map);
     for (int v = 0; v < V; ++v)
     {
+        sum = 0;
         for(int i = 0; i <= W+1; i++)
         {
-            cout << centrality_map[v + (i*V)]<< " ";
+            sum += centrality_map[v+(i*v)];
+            //cout << centrality_map[v + (i*V)]<< " ";
         }
-        cout << "\n";
+        cout << sum << " ";
     }
+
 }
